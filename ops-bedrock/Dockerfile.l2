@@ -1,4 +1,4 @@
-FROM ethereumoptimism/op-geth:optimism-history
+FROM ghcr.io/therealbytes/concrete-geth:latest
 
 RUN apk add --no-cache jq
 
