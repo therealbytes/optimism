@@ -43,9 +43,7 @@ services:
     depends_on:
       - l1
       - l2
-    build:
-      context: ../
-      dockerfile: ./op-node/Dockerfile
+    image: "ghcr.io/therealbytes/ops-bedrock_op-node:cb19e2f9"
     command: >
       op-node
       --l1=ws://l1:8546
@@ -85,9 +83,7 @@ services:
       - l1
       - l2
       - op-node
-    build:
-      context: ../
-      dockerfile: ./op-proposer/Dockerfile
+    image: "ghcr.io/therealbytes/ops-bedrock_op-proposer:cb19e2f9"
     ports:
       - "6062:6060"
       - "7302:7300"
@@ -111,9 +107,7 @@ services:
       - l1
       - l2
       - op-node
-    build:
-      context: ../
-      dockerfile: ./op-batcher/Dockerfile
+    image: "ghcr.io/therealbytes/ops-bedrock_op-batcher:cb19e2f9"
     ports:
       - "6061:6060"
       - "7301:7300"
@@ -139,9 +133,7 @@ services:
       OP_BATCHER_RPC_ENABLE_ADMIN: "true"
 
   stateviz:
-    build:
-      context: ../
-      dockerfile: ./ops-bedrock/Dockerfile.stateviz
+    image: "ghcr.io/therealbytes/ops-bedrock_op-stateviz:cb19e2f9"
     command:
       - stateviz
       - -addr=0.0.0.0:8080
