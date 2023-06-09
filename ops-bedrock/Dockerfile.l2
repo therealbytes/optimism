@@ -1,4 +1,4 @@
-FROM ghcr.io/therealbytes/concrete-geth:latest
+FROM ghcr.io/therealbytes/concrete-template-geth:latest
 
 RUN apk add --no-cache jq
 
