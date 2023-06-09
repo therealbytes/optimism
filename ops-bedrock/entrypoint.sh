@@ -40,6 +40,9 @@ fi
 exec geth \
 	--datadir="$GETH_DATA_DIR" \
 	--verbosity="$VERBOSITY" \
+  --metrics \
+  --metrics.addr="0.0.0.0" \
+  --metrics.port="6060" \
 	--http \
 	--http.corsdomain="*" \
 	--http.vhosts="*" \
